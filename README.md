@@ -1,11 +1,18 @@
 Tecnológico de Monterrey
+
 CAMPUS ESTADO DE MÉXICO
+
 Implementación del internet de las cosas (IOT)
 Cierre de ETAPA 1 del Reto
+
 Sensores y componentes básicos
+
 Fecha de entrega: 4 de OCT del 2026
+
 Daniel Isaac Flores Cabanillas - A01643150
+
 Emilio Xavier Sánchez Cerezo - A01805177
+
 
 Arquitectura del sistema
 
