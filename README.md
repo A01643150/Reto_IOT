@@ -46,6 +46,12 @@ Render y Ubicación del Dispositivo
 El dispositivo se construirá inicialmente como un prototipo de escritorio montado en una placa de pruebas (protoboard). El hardware principal (ESP-32) y el sensor de temperatura LM35 estarán interconectados de forma estática para garantizar la estabilidad de las conexiones eléctricas. Para adquirir la variable biomédica, el usuario colocará sus dedos directamente sobre el encapsulado del sensor LM35, transmitiendo así su temperatura corporal térmica. Este enfoque permite validar la arquitectura de red (WiFi/MQTT) y la visualización en la nube (ThingsBoard) sin los riesgos de desconexión por movimiento, dejando el encapsulado tipo "wearable" para una validación posterior con el profesor.
 
 
-<img width="647" height="350" alt="Screenshot 2026-10-06 at 4 20 17 p m" src="https://github.com/user-attachments/assets/d0a570a1-924a-4155-91ba-74e45b6a6958" />
+<img width="1024" height="564" alt="image" src="https://github.com/user-attachments/assets/71c3384d-13ff-43b1-a8d5-c9d880cd1453" />
 
-Prototipo inicial en placa de pruebas. El ESP-32 lee los datos analógicos del sensor LM35 estáticamente, permitiendo evaluar la conexión WiFi y el envío MQTT sin problemas de falso contacto.
+En esta representación se incluye:
+El ESP-32 es el cerebro central recibiendo la alimentación por USB.
+El LM35 (componente negro de 3 pines) para la temperatura.
+El MAX30102 (módulo rojizo/morado) para medir la saturación de oxígeno (SpO2) y la frecuencia cardíaca.
+El MPU6050 (módulo azul) es la variable extra elegida para detectar las caídas.
+Todos conectados en la protoboard compartiendo pines de alimentación (3.3 V / 5 V) y los canales de comunicación analógica (para el LM35) y de I2C (para el MAX30102 y el MPU6050).
+
