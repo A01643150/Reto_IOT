@@ -18,7 +18,7 @@ Arquitectura del sistema
 
 • Capa de percepción:
 
-Sensor de temperatura analógico LM35: Se eligió este sensor para medir la variable biomédica de la temperatura corporal porque entrega 10 mV por cada grado centígrado y se conectará directamente al pin analógico A0 del microcontrolador.
+Sensor de temperatura digital DS18B20: Se eligió este sensor de acero inoxidable por su resistencia al contacto directo con la piel y el sudor. Utiliza el protocolo digital OneWire, lo que evita ruidos en la señal, y requiere una resistencia pull-up de 4.7 kΩ conectada al ESP-32.
 
 Sensor óptico MAX30102 (Predeterminado): Se integrará para medir la saturación de oxígeno (SpO2) y la frecuencia cardíaca, cubriendo así las variables vitales predeterminadas requeridas para el monitoreo.
 
@@ -43,20 +43,21 @@ Render y Ubicación del Dispositivo
 
 • Render y ubicación del dispositivo:
 
-El dispositivo se construirá inicialmente como un prototipo de escritorio montado en una placa de pruebas (protoboard). El hardware principal (ESP-32) y el sensor de temperatura LM35 estarán interconectados de forma estática para garantizar la estabilidad de las conexiones eléctricas. Para adquirir la variable biomédica, el usuario colocará sus dedos directamente sobre el encapsulado del sensor LM35, transmitiendo así su temperatura corporal térmica. Este enfoque permite validar la arquitectura de red (WiFi/MQTT) y la visualización en la nube (ThingsBoard) sin los riesgos de desconexión por movimiento, dejando el encapsulado tipo "wearable" para una validación posterior con el profesor.
+El dispositivo se construirá inicialmente como un prototipo de escritorio montado en una placa de pruebas (protoboard). El hardware principal (ESP-32) y el sensor de temperatura DS18B20 estarán interconectados de forma fija para garantizar la estabilidad de las conexiones eléctricas. Para adquirir la variable biomédica, el usuario colocará sus dedos directamente sobre el encapsulado del sensor DS18B20, transmitiendo así su temperatura corporal. Este enfoque permite validar la arquitectura de red (WiFi/MQTT) y la visualización en la nube (ThingsBoard) sin los riesgos de desconexión por movimiento, dejando el encapsulado tipo "wearable" para una validación posterior con el profesor.
 
 
-<img width="1024" height="564" alt="image" src="https://github.com/user-attachments/assets/71c3384d-13ff-43b1-a8d5-c9d880cd1453" />
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/b87544fd-b49b-4e6f-82da-bae63d018ddb" />
+
 
 En esta representación se incluye:
 
-El ESP-32 es el cerebro central recibiendo la alimentación por USB.
+El ESP-32 es el cerebro central, recibiendo la alimentación por USB.
 
-El LM35 (componente negro de 3 pines) para la temperatura.
+El DS18B20 (componente negro de 3 pines) para la temperatura. El DS18B20 (sensor con cable negro y punta de acero) para la temperatura, con su resistencia de 4.7 kΩ integrada.
 
 El MAX30102 (módulo rojizo/morado) para medir la saturación de oxígeno (SpO2) y la frecuencia cardíaca.
 
 El MPU6050 (módulo azul) es la variable extra elegida para detectar las caídas.
 
-Todos conectados en la protoboard compartiendo pines de alimentación (3.3 V / 5 V) y los canales de comunicación analógica (para el LM35) y de I2C (para el MAX30102 y el MPU6050).
+Todos están conectados en la protoboard, compartiendo pines de alimentación (3.3 V / 5 V) y los canales de comunicación analógica (para el LM35) y de I2C (para el MAX30102 y el MPU6050).
 
