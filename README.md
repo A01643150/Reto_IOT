@@ -59,5 +59,5 @@ El MAX30102 (módulo rojizo/morado) para medir la saturación de oxígeno (SpO2)
 
 El MPU6050 (módulo azul) es la variable extra elegida para detectar las caídas.
 
-Todos están conectados en la protoboard, compartiendo pines de alimentación (3.3 V / 5 V) y los canales de comunicación analógica (para el LM35) y de I2C (para el MAX30102 y el MPU6050).
+Todos están conectados en la protoboard, compartiendo pines de alimentación (3.3 V / 5 V) y los canales de comunicación analógica (para el DS18B20) y de I2C (para el MAX30102 y el MPU6050).
 
